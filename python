@@ -1,0 +1,67 @@
+alunos = []
+
+def cadastrar_aluno():
+    nome = input("Nome do aluno: ")
+
+    notas = []
+
+    for i in range(4):
+        nota = float(input(f"Digite a nota {i+1}ª: "))
+        notas.append(nota)
+    media = sum(notas) / 4
+
+    if media >= 7:
+        situacao = "Aprovado"
+    elif media >= 5:
+        situacao = "Recuperação"
+    else:
+        situacao = "Reprovado"
+
+    alunos.append({
+        "nome": nome,
+        "notas": notas,
+        "media": media,
+        "situacao": situacao
+    })
+    print("\nAluno cadastrado com sucesso!")
+
+
+def listar_alunos():
+    if not alunos:
+        print("\nNenhum aluno cadastrado!")
+        return
+    print("\n=== LISTA DE ALUNOS CADASTRADOS ===")
+
+    for i, aluno in enumerate(alunos):
+        print(f"{i+1} - {aluno['nome']}")
+
+    escolha = int(input("\nEscolha o número do aluno: "))
+
+    if 1 <= escolha <= len(alunos):
+        aluno = alunos[escolha - 1]
+
+        print("\n=== DADOS DO ALUNO ===")
+        print("Nome:", aluno["nome"])
+        print("Notas:", aluno["notas"])
+        print("Média:", round(aluno["media"], 2))
+        print("Situação:", aluno["situacao"])
+    else:
+        print("\nAluno não encontrado!")
+
+while True:
+    print("\n=== SISTEMA DE NOTAS ===")
+    print("1 - Cadastrar aluno")
+    print("2 - Listar alunos")
+    print("0 - Sair")
+
+    opcao = input("Escolha: ")
+
+    if opcao == "1":
+        cadastrar_aluno()
+    elif opcao == "2":
+        listar_alunos()
+    elif opcao == "0":
+        print("Sistema encerrado!")
+        break
+    else:
+        print("Opção inválida!")

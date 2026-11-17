@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="C:\Users\Wesley\Desktop\Projeto vscode\imagem\style.css">
+    <title>SimuleNotas - Simulador de Notas Escolares</title>
+</head>
+    <body>
+        <header>
+            <h1>SimuleNotas</h1>
+            <p>Simulador de Notas Escolares</p>
+        </header>
+        
+        <main> 
+            <section class="cadastro">
+                <h2>Cadastrar Aluno</h2>
+
+                <form id="formAluno">
+                    <label for="name">Nome do Aluno:</label>
+                    <input type="text" id="nome" required>
+
+                    <label for="grade1">Primeira nota:</label>
+                    <input type="number" id="nota1" min="0" max="10" step="0.01" required>
+                    
+                    <label for="grade2">Segunda nota:</label>
+                    <input type="number" id="nota2" min="0" max="10" step="0.01" required>
+                    
+                    <label for="grade3">Terceira nota:</label>
+                    <input type="number" id="nota3" min="0" max="10" step="0.01" required>
+                    
+                    <button type="submit">Cadastrar Aluno</button>
+                </form>
+            </section>
+
+            <section class="lista">
+                <h2>Alunos Cadastrados</h2>
+
+                <div id="listarAlunos">
+                    <p>Nenhum aluno cadastrado.</p>
+                </div>    
+         </section>
+         
+         <section class="boletim">
+            <h2>Boletim Escolar</h2>
+
+            <div id="dadosAluno">
+                <p>Selecione um aluno para visualizar suas notas.</p>
+            </div>
+         </section>
+
+
+
+
+        </main>
+    </body>
+</html>
